@@ -8,7 +8,9 @@
     "material": "Materiaal:",
     "manufacturer": "Fabrikant:",
     "scale": "Schaal:",
-    "type": "Type:"
+    "type": "Type:",
+    "showFavorites": "Toon favorieten",
+    "showAll": "Toon alles"
   },
   "Overlay": {
     "generalImage": "Algemene afbeelding"

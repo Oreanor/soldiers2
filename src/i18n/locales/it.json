@@ -8,7 +8,9 @@
     "material": "Materiale:",
     "manufacturer": "Produttore:",
     "scale": "Scala:",
-    "type": "Tipo:"
+    "type": "Tipo:",
+    "showFavorites": "Mostra preferiti",
+    "showAll": "Mostra tutto"
   },
   "Overlay": {
     "generalImage": "Immagine generale"

@@ -1,25 +1,3 @@
-export const LANGUAGES = [
-  { code: 'en', name: 'EN' },
-  { code: 'ru', name: 'RU' },
-  { code: 'de', name: 'DE' },
-  { code: 'fr', name: 'FR' },
-  { code: 'es', name: 'ES' },
-  { code: 'it', name: 'IT' },
-  { code: 'pt', name: 'PT' },
-  { code: 'nl', name: 'NL' },
-  { code: 'pl', name: 'PL' },
-  { code: 'uk', name: 'UK' },
-] as const;
-
-export const IMAGE_PATH = 'data/images';
-
-export const TAGS = {
-  material: 'material',
-  manufacturer: 'manufacturer',
-  scale: 'scale',
-  type: 'type',
-} as const;
-
 export const FLAGS = {
   en: `<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0"/><path stroke="#fff" stroke-width="37" d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/><path stroke="#c8102e" stroke-width="22" d="M0 66.7h640M0 140h640M0 213h640M0 287h640M0 361h640M0 435h640"/><path fill="#012169" d="M0 0l364.7 258.5L0 480"/><path fill="#fff" d="M0 0l364.7 258.5L0 480" stroke="#fff" stroke-width="74"/><path fill="#c8102e" d="M0 0l364.7 258.5L0 480" stroke="#c8102e" stroke-width="37"/></svg>`,
   ru: `<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v480H0"/><path fill="#0039A6" d="M0 160h640v320H0"/><path fill="#D52B1E" d="M0 320h640v160H0"/></svg>`,

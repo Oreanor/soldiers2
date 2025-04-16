@@ -28,7 +28,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({
   tags,
   onTagClick,
   activeTags,
-  onResetAll
+  onResetAll,
+  showFavorites,
+  onToggleFavorites
 }) => {
   const { t } = useTranslation();
   
@@ -36,7 +38,9 @@ const LeftPanel: React.FC<LeftPanelProps> = ({
     <div className="w-1/4 h-full bg-white p-4 overflow-y-auto border-r border-gray-200">
       <div className="flex justify-between items-center mb-4">
         <p className="text-lg font-bold">{t('App.title')}</p>
-        <LanguageSelector />
+        <div className="flex items-center gap-2">
+          <LanguageSelector />
+        </div>
       </div>
       <input
         type="text"
@@ -45,22 +49,42 @@ const LeftPanel: React.FC<LeftPanelProps> = ({
         onChange={e => setSearch(e.target.value)}
         className="w-full p-1.5 text-sm rounded border border-gray-300 focus:outline-none focus:ring focus:border-blue-400 mb-4"
       />
-      <div
-        className="text-[10px] text-blue-500 hover:underline cursor-pointer mb-2 select-none w-fit"
-        onClick={onResetAll}
-        tabIndex={0}
-        role="button"
-      >
-        {t('LeftPanel.resetFilters')}
+      <div className="flex gap-2 mb-4">
+        <div
+          onClick={onToggleFavorites}
+          className={`px-2 py-1 rounded text-xs transition-colors cursor-pointer border border-gray-200 inline-block w-fit ${
+            showFavorites 
+              ? 'bg-red-500 text-white border-red-500' 
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          {showFavorites ? t('LeftPanel.showAll') : t('LeftPanel.showFavorites')}
+        </div>
+        <div
+          onClick={onResetAll}
+          className="px-2 py-1 rounded text-xs text-gray-600 hover:bg-gray-200 cursor-pointer border border-gray-200 bg-gray-100 inline-block w-fit"
+        >
+          {t('LeftPanel.resetFilters')}
+        </div>
       </div>
-      <div className="mb-1 font-semibold">{t('LeftPanel.material')}</div>
-      {renderTags('material', tags.material, onTagClick, activeTags)}
-      <div className="mb-1 font-semibold">{t('LeftPanel.manufacturer')}</div>
-      {renderTags('manufacturer', tags.manufacturer, onTagClick, activeTags)}
-      <div className="mb-1 font-semibold">{t('LeftPanel.scale')}</div>
-      {renderTags('scale', tags.scale, onTagClick, activeTags)}
-      <div className="mb-1 font-semibold">{t('LeftPanel.type')}</div>
-      {renderTags('type', tags.type, onTagClick, activeTags)}
+      <div className="space-y-4">
+        <div>
+          <div className="mb-1 font-semibold">{t('LeftPanel.material')}</div>
+          {renderTags('material', tags.material, onTagClick, activeTags)}
+        </div>
+        <div>
+          <div className="mb-1 font-semibold">{t('LeftPanel.manufacturer')}</div>
+          {renderTags('manufacturer', tags.manufacturer, onTagClick, activeTags)}
+        </div>
+        <div>
+          <div className="mb-1 font-semibold">{t('LeftPanel.scale')}</div>
+          {renderTags('scale', tags.scale, onTagClick, activeTags)}
+        </div>
+        <div>
+          <div className="mb-1 font-semibold">{t('LeftPanel.type')}</div>
+          {renderTags('type', tags.type, onTagClick, activeTags)}
+        </div>
+      </div>
     </div>
   );
 };

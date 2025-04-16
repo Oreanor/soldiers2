@@ -25,7 +25,7 @@ export interface CardProps {
 
 export interface LeftPanelProps {
   search: string;
-  setSearch: (value: string) => void;
+  setSearch: (search: string) => void;
   tags: {
     material: string[];
     manufacturer: string[];
@@ -35,4 +35,6 @@ export interface LeftPanelProps {
   onTagClick: (param: string, value: string) => void;
   activeTags: { [key: string]: string[] };
   onResetAll: () => void;
+  showFavorites: boolean;
+  onToggleFavorites: () => void;
 } 

@@ -8,7 +8,9 @@
     "material": "Материал:",
     "manufacturer": "Производитель:",
     "scale": "Масштаб:",
-    "type": "Тип:"
+    "type": "Тип:",
+    "showFavorites": "Показать избранное",
+    "showAll": "Показать все"
   },
   "Overlay": {
     "generalImage": "Общее изображение"
