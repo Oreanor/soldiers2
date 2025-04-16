@@ -1,6 +1,5 @@
 import './App.css'
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import Card from './components/Card';
 import Overlay from './components/Overlay';
 import LeftPanel from './components/LeftPanel';
@@ -11,7 +10,6 @@ import { getUniqueTags, filterItems } from './utils';
 import './i18n';
 
 function App() {
-  const { t } = useTranslation();
   const [selected, setSelected] = useState<ItemType | null>(null);
   const [search, setSearch] = useState('');
   const [tagFilter, setTagFilter] = useState<{[key: string]: string[]}>({});
