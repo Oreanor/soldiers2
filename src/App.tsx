@@ -54,8 +54,7 @@ function App() {
             {filtered.map((item: ItemType) => (
               <div
                 key={item.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-                onClick={() => setSelected(item)}
+               onClick={() => setSelected(item)}
               >
                 <Card item={item} />
               </div>
