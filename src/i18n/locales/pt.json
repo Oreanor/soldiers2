@@ -1,6 +1,6 @@
 {
   "App": {
-    "title": "Soldadinhos de Chumbo"
+    "title": "Soldadinhos de brinquedo"
   },
   "LeftPanel": {
     "searchPlaceholder": "Pesquisar por nome ou fabricante...",
@@ -14,5 +14,13 @@
   },
   "Overlay": {
     "generalImage": "Imagem geral"
+  },
+  "materials": {
+    "plastic": "Plástico",
+    "metal": "Metal"
+  },
+  "types": {
+    "flat": "Plano",
+    "round": "Redondo"
   }
 } 

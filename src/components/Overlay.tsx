@@ -28,24 +28,23 @@ const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
         {item.desc && <div className="mb-4 text-gray-700 text-sm">{item.desc}</div>}
         <img
           src={`${IMAGE_PATH}/${item.folder}/${mainImg}`}
-          alt={item.name}
+          alt={figureNames[mainIdx] || t('Overlay.generalImage')}
           className="w-full max-h-96 object-contain mb-2 rounded"
         />
         <div className="text-center text-xs mb-2 min-h-[1.5em]">
           {mainIdx === 0 ? t('Overlay.generalImage') : (figureNames[mainIdx] || '')}
         </div>
-       
+        
         {images.length > 1 && (
           <div>
             <div className="flex flex-nowrap gap-2 overflow-x-auto p-4">
               {images.map((img, idx) => (
-                <div key={idx} className="flex flex-col items-center w-24 cursor-pointer" onClick={() => setMainIdx(idx)}>
+                <div key={idx} className="relative" onClick={() => setMainIdx(idx)}>
                   <img
                     src={`${IMAGE_PATH}/${item.folder}/${img}`}
-                    alt={figureNames[idx] || `figure ${idx+1}`}
-                    className={`w-24 h-24 object-contain rounded ${mainIdx === idx ? 'ring-2 ring-blue-400' : ''}`}
+                    alt={figureNames[idx] || t('Overlay.generalImage')}
+                    className={`w-24 h-24 object-contain rounded cursor-pointer ${mainIdx === idx ? 'ring-2 ring-blue-400' : ''}`}
                   />
-                  
                 </div>
               ))}
             </div>

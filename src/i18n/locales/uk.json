@@ -9,10 +9,18 @@
     "manufacturer": "Виробник:",
     "scale": "Масштаб:",
     "type": "Тип:",
-    "showFavorites": "Показати обране",
-    "showAll": "Показати все"
+    "showFavorites": "Показати обрані",
+    "showAll": "Показати всі"
   },
   "Overlay": {
     "generalImage": "Загальне зображення"
+  },
+  "materials": {
+    "plastic": "Пластик",
+    "metal": "Метал"
+  },
+  "types": {
+    "flat": "Плоский",
+    "round": "Об'ємний"
   }
 } 

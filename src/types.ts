@@ -20,6 +20,8 @@ export interface OverlayProps {
 
 export interface CardProps {
   item: ItemType;
+  isFavorite?: boolean;
+  onToggleFavorite?: (id: number) => void;
   onClick?: (item: ItemType) => void;
 }
 

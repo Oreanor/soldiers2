@@ -1,6 +1,6 @@
 {
   "App": {
-    "title": "Tinnen Soldaten"
+    "title": "Speelgoedsoldaten"
   },
   "LeftPanel": {
     "searchPlaceholder": "Zoeken op naam of fabrikant...",
@@ -9,10 +9,18 @@
     "manufacturer": "Fabrikant:",
     "scale": "Schaal:",
     "type": "Type:",
-    "showFavorites": "Toon favorieten",
-    "showAll": "Toon alles"
+    "showFavorites": "Favorieten tonen",
+    "showAll": "Alles tonen"
   },
   "Overlay": {
     "generalImage": "Algemene afbeelding"
+  },
+  "materials": {
+    "plastic": "Plastic",
+    "metal": "Metaal"
+  },
+  "types": {
+    "flat": "Plat",
+    "round": "Rond"
   }
 } 

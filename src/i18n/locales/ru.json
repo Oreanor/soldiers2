@@ -4,15 +4,23 @@
   },
   "LeftPanel": {
     "searchPlaceholder": "Поиск по названию или производителю...",
-    "resetFilters": "Сбросить все фильтры",
+    "resetFilters": "Сбросить фильтры",
     "material": "Материал:",
     "manufacturer": "Производитель:",
     "scale": "Масштаб:",
     "type": "Тип:",
-    "showFavorites": "Показать избранное",
+    "showFavorites": "Избранное",
     "showAll": "Показать все"
   },
   "Overlay": {
     "generalImage": "Общее изображение"
+  },
+  "materials": {
+    "plastic": "Пластик",
+    "metal": "Металл"
+  },
+  "types": {
+    "flat": "Плоский",
+    "round": "Объемный"
   }
 } 

@@ -14,5 +14,13 @@
   },
   "Overlay": {
     "generalImage": "Allgemeines Bild"
+  },
+  "materials": {
+    "plastic": "Plastik",
+    "metal": "Metall"
+  },
+  "types": {
+    "flat": "Flach",
+    "round": "Rund"
   }
 } 

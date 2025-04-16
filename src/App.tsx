@@ -1,20 +1,19 @@
 import './App.css'
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import Card from './components/Card';
 import Overlay from './components/Overlay';
 import LeftPanel from './components/LeftPanel';
-import FavoriteButton from './components/FavoriteButton';
 import data from './data/data.json';
 import { ItemType } from './types';
 import { TAGS } from './consts';
-import { getUniqueTags, filterItems } from './utils';
+import { getUniqueTags } from './utils';
+import { useDebounce } from './utils/hooks';
 import './i18n';
 
 function App() {
-  const { t } = useTranslation();
   const [selected, setSelected] = useState<ItemType | null>(null);
   const [search, setSearch] = useState('');
+  const debouncedSearch = useDebounce(search, 300);
   const [activeTags, setActiveTags] = useState<{ [key: string]: string[] }>({});
   const [favorites, setFavorites] = useState<string[]>(() => {
     const saved = localStorage.getItem('favorites');
@@ -61,7 +60,7 @@ function App() {
 
   const items = data as ItemType[];
   const filteredItems = items.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = item.name.toLowerCase().includes(debouncedSearch.toLowerCase());
     const matchesTags = Object.entries(activeTags).every(([param, values]) => {
       if (values.length === 0) return true;
       return values.includes(item[param as keyof typeof item]);
@@ -84,18 +83,15 @@ function App() {
       />
       <div className="flex flex-col w-full relative">
         <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[10px] sm:gap-3 md:gap-4 lg:gap-6 items-start">
             {filteredItems.map((item: ItemType) => (
-              <div
+              <Card
                 key={item.id}
+                item={item}
                 onClick={() => setSelected(item)}
-              >
-                <FavoriteButton
-                  isFavorite={favorites.includes(item.id.toString())}
-                  onClick={() => toggleFavorite(item.id)}
-                />
-                <Card item={item} />
-              </div>
+                isFavorite={favorites.includes(item.id.toString())}
+                onToggleFavorite={toggleFavorite}
+              />
             ))}
           </div>
         </div>

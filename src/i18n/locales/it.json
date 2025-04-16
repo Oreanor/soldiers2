@@ -1,6 +1,6 @@
 {
   "App": {
-    "title": "Soldatini di Piombo"
+    "title": "Soldatini"
   },
   "LeftPanel": {
     "searchPlaceholder": "Cerca per nome o produttore...",
@@ -14,5 +14,13 @@
   },
   "Overlay": {
     "generalImage": "Immagine generale"
+  },
+  "materials": {
+    "plastic": "Plastica",
+    "metal": "Metallo"
+  },
+  "types": {
+    "flat": "Piatto",
+    "round": "Tondo"
   }
 } 

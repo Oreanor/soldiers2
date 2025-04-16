@@ -1,6 +1,6 @@
 {
   "App": {
-    "title": "Soldados de Plomo"
+    "title": "Soldados de juguete"
   },
   "LeftPanel": {
     "searchPlaceholder": "Buscar por nombre o fabricante...",
@@ -14,5 +14,13 @@
   },
   "Overlay": {
     "generalImage": "Imagen general"
+  },
+  "materials": {
+    "plastic": "Plástico",
+    "metal": "Metal"
+  },
+  "types": {
+    "flat": "Plano",
+    "round": "Redondo"
   }
 } 

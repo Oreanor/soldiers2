@@ -1,6 +1,6 @@
 {
   "App": {
-    "title": "Soldats de Plomb"
+    "title": "Soldats de plomb"
   },
   "LeftPanel": {
     "searchPlaceholder": "Rechercher par nom ou fabricant...",
@@ -14,5 +14,13 @@
   },
   "Overlay": {
     "generalImage": "Image générale"
+  },
+  "materials": {
+    "plastic": "Plastique",
+    "metal": "Métal"
+  },
+  "types": {
+    "flat": "Plat",
+    "round": "Rond"
   }
 } 

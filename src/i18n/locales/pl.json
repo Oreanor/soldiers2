@@ -13,6 +13,14 @@
     "showAll": "Pokaż wszystkie"
   },
   "Overlay": {
-    "generalImage": "Ogólny widok"
+    "generalImage": "Ogólny obraz"
+  },
+  "materials": {
+    "plastic": "Plastik",
+    "metal": "Metal"
+  },
+  "types": {
+    "flat": "Płaski",
+    "round": "Okrągły"
   }
 } 
