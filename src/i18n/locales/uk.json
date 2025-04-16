@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Солдатики"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Пошук за назвою або виробником...",
+    "resetFilters": "Скинути всі фільтри",
+    "material": "Матеріал:",
+    "manufacturer": "Виробник:",
+    "scale": "Масштаб:",
+    "type": "Тип:"
+  },
+  "Overlay": {
+    "generalImage": "Загальне зображення"
+  }
+} 

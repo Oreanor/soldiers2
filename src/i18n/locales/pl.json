@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Żołnierzyki"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Szukaj po nazwie lub producencie...",
+    "resetFilters": "Resetuj wszystkie filtry",
+    "material": "Materiał:",
+    "manufacturer": "Producent:",
+    "scale": "Skala:",
+    "type": "Typ:"
+  },
+  "Overlay": {
+    "generalImage": "Ogólny widok"
+  }
+} 

@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Soldadinhos de Chumbo"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Pesquisar por nome ou fabricante...",
+    "resetFilters": "Redefinir todos os filtros",
+    "material": "Material:",
+    "manufacturer": "Fabricante:",
+    "scale": "Escala:",
+    "type": "Tipo:"
+  },
+  "Overlay": {
+    "generalImage": "Imagem geral"
+  }
+} 

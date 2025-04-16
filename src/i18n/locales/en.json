@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Toy Soldiers"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Search by name or manufacturer...",
+    "resetFilters": "Reset all filters",
+    "material": "Material:",
+    "manufacturer": "Manufacturer:",
+    "scale": "Scale:",
+    "type": "Type:"
+  },
+  "Overlay": {
+    "generalImage": "General image"
+  }
+} 

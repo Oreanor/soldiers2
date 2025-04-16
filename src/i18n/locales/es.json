@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Soldados de Plomo"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Buscar por nombre o fabricante...",
+    "resetFilters": "Restablecer todos los filtros",
+    "material": "Material:",
+    "manufacturer": "Fabricante:",
+    "scale": "Escala:",
+    "type": "Tipo:"
+  },
+  "Overlay": {
+    "generalImage": "Imagen general"
+  }
+} 

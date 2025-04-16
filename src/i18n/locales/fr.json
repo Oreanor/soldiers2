@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Soldats de Plomb"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Rechercher par nom ou fabricant...",
+    "resetFilters": "Réinitialiser tous les filtres",
+    "material": "Matériau:",
+    "manufacturer": "Fabricant:",
+    "scale": "Échelle:",
+    "type": "Type:"
+  },
+  "Overlay": {
+    "generalImage": "Image générale"
+  }
+} 

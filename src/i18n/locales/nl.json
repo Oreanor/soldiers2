@@ -1,0 +1,16 @@
+{
+  "App": {
+    "title": "Tinnen Soldaten"
+  },
+  "LeftPanel": {
+    "searchPlaceholder": "Zoeken op naam of fabrikant...",
+    "resetFilters": "Alle filters resetten",
+    "material": "Materiaal:",
+    "manufacturer": "Fabrikant:",
+    "scale": "Schaal:",
+    "type": "Type:"
+  },
+  "Overlay": {
+    "generalImage": "Algemene afbeelding"
+  }
+} 
