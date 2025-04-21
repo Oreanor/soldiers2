@@ -3,7 +3,7 @@
     "title": "Zinnsoldaten"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Nach Name oder Hersteller suchen...",
+    "searchPlaceholder": "Name/Hersteller",
     "resetFilters": "Alle Filter zurücksetzen",
     "material": "Material:",
     "manufacturer": "Hersteller:",

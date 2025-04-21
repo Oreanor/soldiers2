@@ -3,7 +3,7 @@
     "title": "Soldadinhos de brinquedo"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Pesquisar por nome ou fabricante...",
+    "searchPlaceholder": "Nome/fabricante",
     "resetFilters": "Redefinir todos os filtros",
     "material": "Material:",
     "manufacturer": "Fabricante:",

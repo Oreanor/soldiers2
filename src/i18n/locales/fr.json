@@ -3,7 +3,7 @@
     "title": "Soldats de plomb"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Rechercher par nom ou fabricant...",
+    "searchPlaceholder": "Nom/fabricant",
     "resetFilters": "Réinitialiser tous les filtres",
     "material": "Matériau:",
     "manufacturer": "Fabricant:",

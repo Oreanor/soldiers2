@@ -3,7 +3,7 @@
     "title": "Toy Soldiers"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Search by name or manufacturer...",
+    "searchPlaceholder": "Name/manufacturer",
     "resetFilters": "Reset all filters",
     "material": "Material:",
     "manufacturer": "Manufacturer:",

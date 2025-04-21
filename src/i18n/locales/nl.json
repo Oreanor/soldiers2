@@ -3,7 +3,7 @@
     "title": "Speelgoedsoldaten"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Zoeken op naam of fabrikant...",
+    "searchPlaceholder": "Naam/fabrikant",
     "resetFilters": "Alle filters resetten",
     "material": "Materiaal:",
     "manufacturer": "Fabrikant:",

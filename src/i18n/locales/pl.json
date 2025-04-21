@@ -3,7 +3,7 @@
     "title": "Żołnierzyki"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Szukaj po nazwie lub producencie...",
+    "searchPlaceholder": "Nazwa/producent",
     "resetFilters": "Resetuj wszystkie filtry",
     "material": "Materiał:",
     "manufacturer": "Producent:",

@@ -3,7 +3,7 @@
     "title": "Soldados de juguete"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Buscar por nombre o fabricante...",
+    "searchPlaceholder": "Nombre/fabricante",
     "resetFilters": "Restablecer todos los filtros",
     "material": "Material:",
     "manufacturer": "Fabricante:",

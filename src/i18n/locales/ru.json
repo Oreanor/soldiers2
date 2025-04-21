@@ -3,7 +3,7 @@
     "title": "Солдатики"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Поиск по названию или производителю...",
+    "searchPlaceholder": "Название/производитель",
     "resetFilters": "Сбросить фильтры",
     "material": "Материал:",
     "manufacturer": "Производитель:",

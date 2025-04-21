@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OverlayProps } from '../types';
 import { IMAGE_PATH } from '../consts';
 
 const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
   const { t } = useTranslation();
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
   
   // Main image is always first
   const images = [item.img, ...(item.figures?.map(f => f.img) || [])];
@@ -12,11 +14,38 @@ const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
 
   const [mainIdx, setMainIdx] = useState(0);
   const mainImg = images[mainIdx];
-  
+
+  useEffect(() => {
+    const checkHeight = () => {
+      if (!overlayRef.current) return;
+      
+      const windowHeight = window.innerHeight;
+      const overlayHeight = overlayRef.current.offsetHeight;
+      
+      if (overlayHeight > windowHeight * 0.9) {
+        const newScale = (windowHeight * 0.9) / overlayHeight;
+        setScale(newScale);
+      } else {
+        setScale(1);
+      }
+    };
+
+    checkHeight();
+    window.addEventListener('resize', checkHeight);
+    
+    return () => {
+      window.removeEventListener('resize', checkHeight);
+    };
+  }, [mainIdx]);
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onClick={onClose}>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl w-full relative" onClick={e => e.stopPropagation()}>
+      <div 
+        ref={overlayRef}
+        className="bg-white rounded-lg shadow-lg p-6 max-w-2xl w-full relative" 
+        onClick={e => e.stopPropagation()}
+        style={{ transform: `scale(${scale})`, transformOrigin: 'center center' }}
+      >
         <div 
           className="absolute top-2 right-2 text-2xl text-gray-400 hover:text-black cursor-pointer w-8 h-8 flex items-center justify-center" 
           onClick={onClose}
@@ -39,7 +68,7 @@ const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
           <div>
             <div className="flex flex-nowrap gap-2 overflow-x-auto p-4">
               {images.map((img, idx) => (
-                <div key={idx} className="relative" onClick={() => setMainIdx(idx)}>
+                <div key={`${item.id}-${idx}`} className="relative" onClick={() => setMainIdx(idx)}>
                   <img
                     src={`${IMAGE_PATH}/${item.folder}/${img}`}
                     alt={figureNames[idx] || t('Overlay.generalImage')}

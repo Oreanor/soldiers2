@@ -3,7 +3,7 @@
     "title": "Soldatini"
   },
   "LeftPanel": {
-    "searchPlaceholder": "Cerca per nome o produttore...",
+    "searchPlaceholder": "Nome/produttore",
     "resetFilters": "Reimposta tutti i filtri",
     "material": "Materiale:",
     "manufacturer": "Produttore:",
