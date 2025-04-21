@@ -20,31 +20,38 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
   const [showFavorites, setShowFavorites] = useState(false);
+  const [initialImageIndex, setInitialImageIndex] = useState<number>(0);
 
   // Проверка URL при загрузке приложения
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('item');
+    const imageIdx = urlParams.get('image');
     
     if (itemId) {
       const item = (data as ItemType[]).find(item => item.id.toString() === itemId);
       if (item) {
         setSelected(item);
+        if (imageIdx) {
+          const idx = parseInt(imageIdx, 10);
+          if (!isNaN(idx) && idx >= 0 && idx < (item.figures?.length || 0) + 1) {
+            setInitialImageIndex(idx);
+          }
+        }
       }
     }
   }, []);
 
   // Обновление URL при выборе элемента
   useEffect(() => {
+    const url = new URL(window.location.href);
     if (selected) {
-      const url = new URL(window.location.href);
       url.searchParams.set('item', selected.id.toString());
-      window.history.pushState({}, '', url.toString());
     } else {
-      const url = new URL(window.location.href);
       url.searchParams.delete('item');
-      window.history.pushState({}, '', url.toString());
+      url.searchParams.delete('image');
     }
+    window.history.pushState({}, '', url.toString());
   }, [selected]);
 
   useEffect(() => {
@@ -86,7 +93,9 @@ function App() {
 
   const items = data as ItemType[];
   const filteredItems = items.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(debouncedSearch.toLowerCase());
+    const searchLower = debouncedSearch.toLowerCase();
+    const matchesSearch = item.name.toLowerCase().includes(searchLower) || 
+                         item.manufacturer.toLowerCase().includes(searchLower);
     const matchesTags = Object.entries(activeTags).every(([param, values]) => {
       if (values.length === 0) return true;
       return values.includes(item[param as keyof typeof item]);
@@ -123,7 +132,14 @@ function App() {
         </div>
       </div>
       {selected && (
-        <Overlay item={selected} onClose={() => setSelected(null)} />
+        <Overlay 
+          item={selected} 
+          onClose={() => {
+            setSelected(null);
+            setInitialImageIndex(0);
+          }} 
+          initialImageIndex={initialImageIndex}
+        />
       )}
     </div>
   )

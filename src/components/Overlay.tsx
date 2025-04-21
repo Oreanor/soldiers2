@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { OverlayProps } from '../types';
 import { IMAGE_PATH } from '../consts';
 
-const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
+const Overlay: React.FC<OverlayProps> = ({ item, onClose, initialImageIndex = 0 }) => {
   const { t } = useTranslation();
   const overlayRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -12,8 +12,28 @@ const Overlay: React.FC<OverlayProps> = ({ item, onClose }) => {
   const images = [item.img, ...(item.figures?.map(f => f.img) || [])];
   const figureNames = [item.name, ...(item.figures?.map(f => f.name) || [])];
 
-  const [mainIdx, setMainIdx] = useState(0);
+  const [mainIdx, setMainIdx] = useState(initialImageIndex);
   const mainImg = images[mainIdx];
+
+  // Проверка URL при загрузке оверлея
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const imageIdx = urlParams.get('image');
+    
+    if (imageIdx) {
+      const idx = parseInt(imageIdx, 10);
+      if (!isNaN(idx) && idx >= 0 && idx < images.length) {
+        setMainIdx(idx);
+      }
+    }
+  }, [images.length]);
+
+  // Обновление URL при выборе изображения
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('image', mainIdx.toString());
+    window.history.pushState({}, '', url.toString());
+  }, [mainIdx]);
 
   useEffect(() => {
     const checkHeight = () => {

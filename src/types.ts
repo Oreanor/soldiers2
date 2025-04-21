@@ -16,6 +16,7 @@ export type ItemType = {
 export interface OverlayProps {
   item: ItemType;
   onClose: () => void;
+  initialImageIndex?: number;
 }
 
 export interface CardProps {
