@@ -21,6 +21,32 @@ function App() {
   });
   const [showFavorites, setShowFavorites] = useState(false);
 
+  // Проверка URL при загрузке приложения
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemId = urlParams.get('item');
+    
+    if (itemId) {
+      const item = (data as ItemType[]).find(item => item.id.toString() === itemId);
+      if (item) {
+        setSelected(item);
+      }
+    }
+  }, []);
+
+  // Обновление URL при выборе элемента
+  useEffect(() => {
+    if (selected) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('item', selected.id.toString());
+      window.history.pushState({}, '', url.toString());
+    } else {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('item');
+      window.history.pushState({}, '', url.toString());
+    }
+  }, [selected]);
+
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
